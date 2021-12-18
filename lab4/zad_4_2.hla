@@ -1,0 +1,28 @@
+program zad_4_2;
+#include("stdlib.hhf");
+static
+	liczba: int8;		// Deklaracja zmiennej 8-bitowej
+begin zad_4_2;
+stdout.put("Podaj liczbe: ");
+stdin.get(liczba);		// Wczytanie wartosci do zmiennej
+stdout.put("Liczba bez rozszerzenia - dziesietnie: ", liczba, ", szesnastkowo: ");
+stdout.puth8(liczba);	// Wyświetlanie zmiennej szesnastkowo
+mov(liczba, al);		// Przeniesienie wartośći do rejestru 8-bitowego
+cbw();					// Rozszerzenie rejestru AL na 16-bitowy AX
+stdout.put(nl, "Liczba z rozszerzeniem do 16 bitow - dziesietnie: ");
+stdout.puti16(ax);		// Wyświetlanie dziesiętne wartości rejestru
+stdout.put(", szesnastkowo: ", ax, nl);
+cwde();					// Rozszerzenie rejestru AX na 32-bitowy EAX
+stdout.put("Liczba z rozszerzeniem do 32 bitow - dziesietnie: ");
+stdout.puti32(eax);		// Wyświetlanie dziesiętne wartości rejestru
+stdout.put(", szesnastkowo: ", eax, nl);
+stdout.put(nl, "Instrukcje kopiowania z rozszerzeniem", nl);
+movsx(al, ax);			// Kopiowanie wartości z rozszerzeniem do 16-bitowego rejestru
+stdout.put(nl, "Liczba z rozszerzeniem do 16 bitow - dziesietnie: ");
+stdout.puti16(ax);
+stdout.put(", szesnastkowo: ", ax, nl);
+movsx(ax, eax);			// Kopiowanie wartości z rozszerzeniem do 32-bitowego rejestru
+stdout.put("Liczba z rozszerzeniem do 32 bitow - dziesietnie: ");
+stdout.puti32(eax);
+stdout.put(", szesnastkowo: ", eax, nl);
+end zad_4_2;

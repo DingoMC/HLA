@@ -1,0 +1,45 @@
+program zad6_4;
+#include("stdlib.hhf");
+static
+	// Deklaracje tablic
+	tab: int32[8] := [65536, 65537, 65538, 65539, 65540, 65541, 65542, 65543];
+	tab2: int8[8] := [7, 6, 5, 4, 3, 2, 1, 0];
+	// Deklaracje indeksów
+	i: int32 := 0;
+	j: int32 := 0;
+begin zad6_4;
+	stdout.put("Tablica 32-biotwa:", nl);
+	// Wyświetlanie tablicy (8 elem. 32-bitowych)
+	repeat
+		mov(i, EAX);			// Przeniesienie indeksu do rejestru EAX
+		mov(tab[EAX * 4], EBX);	// Przeniesienie wartości tablicy o danym indeksie (Rozmiar zmiennej: 32-bity, Skala: 4) do rejestru EBX
+		stdout.puti32(EBX);		// Wyświetlenie rejestru EBX (wartości z tablicy)
+		stdout.put(" ");
+		add(1, i);				// Inkrementacja indeksu
+	until(i >= 8);				// Koniec pętli wyświetlania
+	mov(0, i);					// Wyzerowanie indeksu
+	stdout.put(nl, "Tablica 8-biotwa:", nl);
+	// Wyświetlanie tablicy (8 elem. 8-bitowych)
+	repeat
+		mov(i, EAX);			// Przeniesienie indeksu do rejestru EAX
+		mov(tab2[EAX], BL);		// Wyświetlenie rejestru BL (wartości z tablicy)
+		stdout.puti8(BL);
+		stdout.put(" ");
+		add(1, i);				// Inkrementacja indeksu
+	until(i >= 8);				// Koniec pętli wyświetlania
+	stdout.put(nl, "Ktory element kopiowac: ");
+	stdin.get(j);
+	mov(j, EAX);				// Przeniesienie wybranego indeksu do rejestru EAX
+	movsx(tab2[EAX], ECX);		// Przeniesienie (z rozszerzeniem) liczby 8-bitowej do rejestru ECX
+	mov(ECX, tab[EAX * 4]);		// Przeniesienie wartości rejestru ECX to tablicy o danym indeksie (Rozmiar zmiennej: 32-bity, Skala: 4)
+	mov(0, i);					// Wyzerowanie indeksu
+	stdout.put("Tablica 32-biotwa po kopiowaniu elementu z tablicy 8-bitowej:", nl);
+	// Wyświetlanie nowj tablicy (8 elem. 32-bitowych)
+	repeat
+		mov(i, EAX);			// Przeniesienie indeksu do rejestru EAX
+		mov(tab[EAX * 4], EBX);	// Przeniesienie wartości tablicy o danym indeksie (Rozmiar zmiennej: 32-bity, Skala: 4) do rejestru EBX
+		stdout.puti32(EBX);		// Wyświetlenie rejestru EBX (wartości z tablicy)
+		stdout.put(" ");
+		add(1, i);				// Inkrementacja indeksu
+	until(i >= 8);
+end zad6_4;

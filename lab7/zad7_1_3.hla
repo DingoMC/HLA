@@ -1,0 +1,16 @@
+program zad7_1_3;
+#include("stdlib.hhf");
+begin zad7_1_3;
+mov(4, al);			// Wczytanie 4 do rejestru AL
+shl(2, al);			// Przesunięcie bitowe o 2 w lewo rejestru AL (mnożenie przez 2^2)
+stdout.put("Przesuniecie bitowe o 2 w lewo liczby 4: ");
+stdout.puti8(al);	// Wyświetlenie wyniku
+mov(32, al);		// Wczytanie 32 do rejestru AL
+shr(3, al);			// Przesunięcie bitowe o 3 w prawo rejestru AL (dzielenie przez 2^3)
+stdout.put(nl, "Przesuniecie bitowe o 3 w prawo liczby 32: ");
+stdout.puti8(al);	// Wyświetlenie wyniku
+mov(-16, eax);		// Wczytanie -16 do rejestru EAX
+sar(3, eax);		// Przesunięcie bitowe o 3 w prawo (ze znakiem) rejestru EAX (dzielenie przez 2^3)
+stdout.put(nl, "Przesuniecie bitowego o 3 w prawo (ze znakiem) liczby (-16): ");
+stdout.puti32(eax); // Wyświetlenie wyniku
+end zad7_1_3;

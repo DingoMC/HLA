@@ -1,0 +1,13 @@
+program negacja;
+#include("stdlib.hhf");
+static
+	a: int8;
+begin negacja;
+stdout.put("Podaj wartosc od -128 do 127: ");
+stdin.get(a);
+mov(a, al); 	// Przeniesienie wartości a do rejestru al
+mov(-1, bl); 	// Wartość rejestru bl ustawiamy na -1
+mul(bl); 		// Wartość rejestru al mnożymy przez bl (al * -1)
+mov(al, a); 	// Przenosimy wartość rejestru al do zmiennej a
+stdout.put("Liczba przeciwna: ", a, nl);
+end negacja;

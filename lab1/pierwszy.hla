@@ -1,0 +1,5 @@
+program pierwszy; // deklaracja nazwy programu
+#include("stdlib.hhf"); // Dodanie biblioteki standardowej
+begin pierwszy; // Początek części instrukcji programu
+stdout.put("To jst nasz pierwszy program"); // Wyświetlanie tekstu
+end pierwszy; // Zakończenie programu

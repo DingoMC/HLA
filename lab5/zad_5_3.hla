@@ -1,0 +1,11 @@
+program zad_5_3;
+#include("stdlib.hhf");
+begin zad_5_3;
+	stdout.put("Wprowadz tekst: "); 
+	stdin.flushInput();			// Wymuszenie wczytywania nowego wiersza danych
+	repeat
+		stdin.getc();			// Pobieranie znaku z klawiatury do rejestru AL
+		stdout.put(stdio.tab);	// Wyświetlenie znaku tabulacji z modułu stdio
+		stdout.put(al, nl);		// Wyświetlanie znaku w posatci szesnastkowej
+	until(stdin.eoln());		// Pętla działa do momentu wpisania znaku nowej linii
+end zad_5_3;

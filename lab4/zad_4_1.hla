@@ -1,0 +1,21 @@
+program zad_4_1;
+#include("stdlib.hhf");
+static
+	liczba: int8;		// Deklaracja liczby 8-bitowej
+begin zad_4_1;
+stdout.put("Podaj liczbe: ");
+stdin.get(liczba);		// Wczytanie wartosci
+mov(liczba, al);		// Przeniesienie liczby do rejestru
+stdout.put("Liczba w postaci szesnastkowej: ");
+stdout.puth8(liczba);	// Wyświetlenie liczby w postaci szesnastkowej
+not(liczba);			// Negacja bitów
+stdout.put(nl, "Liczba w postaci szesnastkowej po inwersji bitow: ");
+stdout.puth8(liczba);	// Wyświetlenie zanegowanej liczby w postaci szesnastkowej
+add(1, liczba);			// Dodanie 1 do zanegowanej liczby
+stdout.put(nl, "Liczba w postaci szesnastkowej po inwersji bitow i dodaniu jednosci: ");
+stdout.puth8(liczba);	// Wyświetlenie zanegowanej liczby w postaci szesnastkowej zwiększonej o 1
+stdout.put(nl, "Liczba w postaci dziesietnej po inwersji bitow i dodaniu jednosci: ", liczba, nl);
+neg(al);				// Negacja bitowa U2 pierwotnej liczby
+mov(al, liczba);		// Przeniesienie wartości rejestru do zmiennej
+stdout.put("Liczba w postaci dziesietnej w kodzie U2: ", liczba, nl);
+end zad_4_1;

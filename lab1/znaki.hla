@@ -1,0 +1,10 @@
+program znaki;
+#include("stdlib.hhf");
+static
+	znak: char := 'A';	// Deklaracja zmiennej znakowej
+begin znaki;
+stdout.put("Wartosc zmiennej znaku: ", znak, nl);
+stdout.put("Wpisz nowy znak: ");
+stdin.get(znak);		// Wprowadzenie nowej wartości zmiennej znakowej
+stdout.put("Wpisales ", znak, nl);
+end znaki;

@@ -1,0 +1,19 @@
+program zad2_2_2;
+#include("stdlib.hhf");
+static
+	liczba: int8 := 40;	// Zmienna - licznik od 40 do 1
+begin zad2_2_2;
+	// Pętla for od 0 do 7 (8 wierszy)
+	// AL jest użyty jako licznik pętli for
+	for (mov(0, AL); AL < 8; inc(AL)) do
+		mov(0, BL); // Wyzerowanie licznika pętli while
+		// Pętla while od 0 do 4 (5 kolumn)
+		// BL jest użyty jako licznik pętli while
+		while (BL < 5) do
+			stdout.put(liczba:4);
+			sub(1, liczba);		// Zmniejszenie liczby o 1
+			inc(BL);			// Inkrementacja licznika pętli while
+		endwhile;
+		stdout.newln();			// Przejście do nowej linii
+	endfor;
+end zad2_2_2;

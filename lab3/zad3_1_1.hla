@@ -1,0 +1,14 @@
+program zad3_1_1;
+#include("stdlib.hhf");
+static
+	zmienna1: int8;
+	z2: int8;
+begin zad3_1_1;
+stdout.put("Podaj wartosc zmiennej int8: ");
+stdin.get(zmienna1);						// Wprowadzenie pierwszej zmiennej int8
+stdout.put("Podaj wartosc do rejestru al: ");
+stdin.get(z2);								// Wprowadzenie drugiej zmiennej int8
+mov(z2,al);									// Przeniesienie wartości do rejestru
+stdout.put("Zmienna int8: ", zmienna1, nl);	// Wyświetlanie zmiennej int8
+stdout.put("Zmienna z rejestru al: ", al);	// Wyświetlanie wartości rejestru
+end zad3_1_1;

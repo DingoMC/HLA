@@ -1,0 +1,8 @@
+program zad3_2_1;
+#include("stdlib.hhf");
+begin zad3_2_1;
+stdout.put("Podaj wartosc w systemie szesnastkowym: ");
+stdin.get(ax);		// Podanie wartości w systemie szesnastkowym
+stdout.put("Wartosc w systemie dziesietnym: ")
+stdout.puti16(ax);	// Automatyczna konwersja na system dziesiętny i wyświetlenie
+end zad3_2_1;

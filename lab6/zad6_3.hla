@@ -1,0 +1,12 @@
+program zad6_3;
+#include("stdlib.hhf");
+static
+	tab: int32[8] := [65536,65537,65538,65539,65540,65541,65542,65543]; // Deklaracja tablicy 8-elementowej
+	i: int32;			// Deklaracja indeksu tablicy
+begin zad6_3;
+stdout.put("Podaj indeks tablicy: ");
+stdin.get(i);			// Wczytanie indeksu tablicy
+mov(i, EAX);			// Przeniesienie indeksu tablicy do rejestru EAX
+mov(tab[EAX * 4], EBX);	// Przeniesienie wartości tablicy o danym indeksie (Rozmiar zmiennej: 32-bity, Skala: 4) do rejestru EBX
+stdout.puti32(EBX);		// Wyświetlenie rejestru EBX
+end zad6_3;

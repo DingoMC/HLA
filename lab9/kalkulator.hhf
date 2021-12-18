@@ -1,0 +1,40 @@
+// << Kalkulator - procedury do zadania 9.2 >>
+// Procedura dodawania
+procedure dodawanie(liczba1 : int32; liczba2 : int32);
+begin dodawanie;
+	mov(liczba1, EAX);	// Wczytanie pierwszej liczby do rejestru EAX
+	add(liczba2, EAX);	// Dodanie drugiej liczby do rejestru EAX
+	// Wyświetlanie wyniku
+	stdout.put(liczba1, " + ", liczba2, " = ");
+	stdout.puti32(EAX);
+end dodawanie;
+// Procedura odejmowania
+procedure odejmowanie(liczba1 : int32; liczba2 : int32);
+begin odejmowanie;
+	mov(liczba1, EAX);	// Wczytanie pierwszej liczby do rejestru EAX
+	sub(liczba2, EAX);	// Odjęcie od rejestru EAX drugiej liczby
+	// Wyświetlanie wyniku
+	stdout.put(liczba1, " - ", liczba2, " = ");
+	stdout.puti32(EAX);
+end odejmowanie;
+// Procedura mnożenia ze znakiem
+procedure mnozenie(liczba1 : int32; liczba2 : int32);
+begin mnozenie;
+	mov(liczba1, EAX);		// Wczytanie pierwszej liczby do rejestru EAX
+	intmul(liczba2, EAX);	// Mnożenie ze znakiem rejestru EAX przez drugą liczbę
+	// Wyświetlanie wyniku
+	stdout.put(liczba1, " * ", liczba2, " = ");
+	stdout.puti32(EAX);
+end mnozenie;
+// Procedura dzielenia całkowitego z resztą ze znakiem
+procedure dzielenie(liczba1 : int32; liczba2 : int32);
+begin dzielenie;
+	mov(0, EDX);			// Wyzerowanie rejestru do przechowania reszty całkowitej
+	mov(liczba1, EAX);		// Wczytanie pierwszej liczby do rejestru EAX
+	idiv(liczba2, EDX:EAX);	// Dzielenie ze znakiem rejestru EAX (reszta zachowana w rejestrze EDX) przez drugą liczbę
+	// Wyświetlanie wyniku
+	stdout.put(liczba1, " / ", liczba2, " = ");
+	stdout.puti32(EAX);
+	stdout.put(" r ");
+	stdout.puti32(EDX);
+end dzielenie;

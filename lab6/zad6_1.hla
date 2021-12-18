@@ -1,0 +1,11 @@
+program zad6_1;
+#include("stdlib.hhf");
+static
+	zmienna: int8;		// Deklaracja zmiennej 8-bitowej
+begin zad6_1;
+mov(&zmienna, EBX);		// Pobranie adresu zmiennej do rejestru EBX
+stdout.put(EBX, nl);	// Wyświetlenie adresu zmiennej
+mov(17, EAX);			// Zapisanie wartości rejestru EAX
+mov(EAX, [EBX]);		// Zapisanie w zmiennej wartości rejestru EAX z wykorzystaniem adresowania pośredniego
+stdout.put(zmienna);	// Wyświetlenie wartości zmiennej
+end zad6_1;

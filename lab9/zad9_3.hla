@@ -1,0 +1,26 @@
+program zad9_3;
+#include("stdlib.hhf");
+static
+	znak : char;	// Deklaracja znaku
+// Procedura do sprawdzenia czy znak jest literą alfabetu
+procedure sprawdz(z : char);
+@returns( "EAX" );		// Procedura zwraca wartość do rejestru EAX
+begin sprawdz;
+	// Alfabet może zawierać zarówno duże jak i małe litery
+	if ((z >= 'A' && z <= 'Z') || (z >= 'a' && z <= 'z')) then
+		mov(1, EAX);	// Jeśli jest literą zwróć 1
+	else
+		mov(0, EAX);	// W przeciwnym razie wypisz 0
+	endif;
+end sprawdz;
+begin zad9_3;
+// Wczytanie znaku
+stdout.put("Podaj znak: ");
+stdin.get(znak);
+// Wywołanie procedury w instrukcji warunkowej
+if (sprawdz(znak)) then
+	stdout.put("Wprowadzony znak jest litera alfabetu", nl);
+else
+	stdout.put("Wprowadzony znak nie jest litera alfabetu", nl);
+endif;
+end zad9_3;

@@ -1,0 +1,13 @@
+program zad_4_3_2;
+#include("stdlib.hhf");
+static
+	liczba: int8;			// Deklaracja zmiennej 8-bitowej
+begin zad_4_3_2;
+stdout.put("Podaj liczbe dodatnia: ");
+stdin.get(liczba);			// Wczytanie wartości zmiennej
+forever						// Początek pętli nieskończonej
+	stdout.put(liczba, " ");
+	add(1, liczba);			// Dodanie 1 do wartości zmiennej
+	breakif(liczba==69);	// Warunek przerwania pętli
+endfor;						// Koniec pętli nieskończonej
+end zad_4_3_2;

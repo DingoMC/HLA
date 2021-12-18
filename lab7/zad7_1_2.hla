@@ -1,0 +1,18 @@
+program zad7_1_2;
+#include("stdlib.hhf");
+begin zad7_1_2;
+mov(7, ax);			// Wczytanie 7 do rejestru AX
+mov(2, bl);			// Wczytanie 2 do rejestru BL
+div(bl);			// Wykonanie dzielenia z resztą: AX / BL = AL r AH
+stdout.put("7/2", nl, "Iloraz calkowity: ");
+stdout.puti8(al);	// Wyświetlenie ilorazu całkowitego
+stdout.put(nl, "Reszta: ");
+stdout.puti8(ah);	// Wyświetlenie reszty całkowitej
+mov(-9, ax);		// Wczytanie -9 do rejestru AX
+mov(2, bl);			// Wczytanie 2 do rejestru BL
+idiv(bl);			// Wykonanie dzielenia z resztą ze znakiem: AX / BL = AL r AH
+stdout.put(nl, "(-9)/2", nl, "Iloraz calkowity: ");
+stdout.puti8(al);	// Wyświetlenie ilorazu całkowitego
+stdout.put(nl, "Reszta: ");
+stdout.puti8(ah);	// Wyświetlenie reszty całkowitej
+end zad7_1_2;

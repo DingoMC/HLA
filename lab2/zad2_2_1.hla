@@ -1,0 +1,12 @@
+program zad2_2_1;
+#include("stdlib.hhf");
+static
+	i: int8 := 10;		// Zmienna petli
+begin zad2_2_1;
+	mov(i, AL);			// Przeniesienie wartości do rejestru
+	while (AL >= 1) do	// Dopóki wartość rejestru będzie >= 1...
+		mov(AL, i);		// Przenieś wartość rejestru do zmiennej
+		stdout.put(i, " ");
+		dec(AL);		// Zmniejsz wartość rejestru o 1
+	endwhile;
+end zad2_2_1;

@@ -1,0 +1,15 @@
+program zad_1_2;
+#include("stdlib.hhf");
+static
+	a: int8 := 4;				// Zmienna całkowita z początkową wartością
+	b: int8;					// Druga zmienna całkowita
+	prawda: boolean := true;	// Zmienna logiczna - logiczna prawda
+	falsz: boolean := false;	// Zmienna logiczna - logiczny fałsz
+begin zad_1_2;
+stdout.put("Podaj liczbe calkowita: ");
+stdin.get(b);											// Pobranie zmiennej b
+stdout.put("Wartosc zmiennej ustalonej: ", a, nl);
+stdout.put("Wartosc zmiennej wprowadzona: ", b, nl);
+stdout.put("Logiczna prawda: ", prawda, nl);
+stdout.put("Logiczny falsz: ", falsz, nl);
+end zad_1_2;

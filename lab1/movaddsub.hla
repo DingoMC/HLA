@@ -1,0 +1,14 @@
+program movaddsub;
+#include("stdlib.hhf");
+static
+	a: int8 := -7;
+	b: int8 := 6;
+begin movaddsub;
+stdout.put("Zmienna a: ", a, nl);
+stdout.put("Zmienna b: ", b, nl);
+mov(b, al);		// Przeniesienie wartości zmiennej b do rejestru al
+sub(al, a);		// Odjęcie od zmiennej a wartości rejestru al
+stdout.put("Wynik operacji a-b: ", a, nl);
+add(12, a);		// Dodanie liczby 12 do zmiennej a
+stdout.put("Wynik operacji a-b+12: ", a, nl);
+end movaddsub;

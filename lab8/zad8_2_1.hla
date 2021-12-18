@@ -1,0 +1,21 @@
+program zad8_2_1;
+#include("stdlib.hhf");
+// Procedura wyświetlania pojedynczej linii
+procedure linia;
+	begin linia;
+		// Wyświetlanie 40 spacji
+		for (mov(0, ECX); ECX < 40; inc(ECX)) do
+			stdout.put(" ");
+		endfor;
+		// Wyświetlanie gwiazdki na końcu
+		stdout.put("*");
+	end linia;
+begin zad8_2_1;
+	// Wyświetlanie 20 wierszy
+	for (mov(0, ECX); ECX < 20; inc(ECX)) do
+		push(ECX);		// Kopiowanie wartości z rejestru ECX na stos
+		call(linia);	// Wywołanie procedury wyświetlania wiersza
+		pop(ECX);		// Przywrócenie wartości rejestru ECX ze stosu
+		stdout.newln();	// Przejście do nowego wiersza
+	endfor;
+end zad8_2_1;

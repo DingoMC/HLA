@@ -1,0 +1,10 @@
+program zad3_1_2;
+#include("stdlib.hhf");
+static
+	z1: int16;
+begin zad3_1_2;
+stdout.put("Podaj wartosc w systemie szesnastkowym: ");
+stdin.get(ax);	// Wprowadzenie wartosci do rejestru w postaci szesnastkowej
+mov(ax,z1);		// Przeniesienie wartości rejestru do zmiennej
+stdout.put("Wartosc w systemie dziesietnym: ", z1);	// Wynik w postaci dziesiętnej
+end zad3_1_2;

@@ -1,0 +1,19 @@
+program zad7_1_1;
+#include("stdlib.hhf");
+begin zad7_1_1;
+mov(4, bl);			// Wczytanie 4 do rejestru BL
+mov(2, ax);			// Wczytanie 2 do rejestru AX
+mul(bl);			// Wykonanie mnożenia AX = AX * BL
+stdout.put("Wynik mnozenia 2x4 = ");
+stdout.puti16(ax);	// Wyświetlenie wyniku
+mov(-4, bl);		// Wczytanie -4 do rejestru BL
+mov(2, ax);			// Wczytanie 2 do rejestru AX
+imul(bl);			// Wykonanie mnożenia ze znakiem AX = AX * BL
+stdout.put(nl, "Wynik mnozenia 2x(-4) = ");
+stdout.puti16(ax);	// Wyświetlenie wyniku
+mov(-64, eax);		// Wczytanie 64 do rejestru EAX
+mov(64, ebx);		// Wczytanie 64 do rejestru EBX
+intmul(eax, ebx);	// Wykonanie mnożenia EBX = EBX * EAX
+stdout.put(nl, "Wynik mnozenia (-64)x64 = ");
+stdout.puti32(ebx);	// Wyświetlenie wyniku
+end zad7_1_1;

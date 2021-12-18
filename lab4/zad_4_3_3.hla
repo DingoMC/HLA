@@ -1,0 +1,22 @@
+program zad_4_3_3;
+#include("stdlib.hhf");
+#include("excepts.hhf");
+static
+	liczba: int8;					// Deklaracja zmiennej 8-bitowej
+	dobrze: boolean;				// Deklaracja zmiennej logicznej
+begin zad_4_3_3;
+forever								// Początek pętli nieskończonej
+	stdout.put("Podaj liczbe z zakresu <-128, 127>: ");
+	mov(true, dobrze);				// Ustawienie zmiennej logicznej na true
+	try								// Początek bloku try
+		stdin.get(liczba);			// Wczytanie wartości zmiennej
+	exception(ex.ConversionError)	// Wyjątek: błąd konwersji
+		mov(false, dobrze);			// Ustawienie zmiennej logicznej na false
+		stdout.put("Nieprawidlowe dane!", nl);
+	exception(ex.ValueOutOfRange)	// Wyjątek: Wartość spoza zakresu
+		mov(false, dobrze);			// Ustawienie zmiennej logicznej na false
+		stdout.put("Wartosc spoza zakresu!", nl);
+	endtry;							// Koniec bloku try
+	breakif(dobrze==true);			// Warunek przerwania pętli
+endfor;								// Koniec pętli nieskończonej
+end zad_4_3_3;

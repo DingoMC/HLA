@@ -1,0 +1,11 @@
+program zad3_2_2;
+#include("stdlib.hhf");
+static
+	z: int32;
+begin zad3_2_2;
+stdout.put("Podaj liczbe 32-bitowa w systemie szesnastkowym: ");
+stdin.geth32();		// Pobranie wartości 32-bitowej do rejestru w systemie szesnastkowym
+mov(eax,z);			// Przeniesienie wartości rejestru do zmiennej 32-bitowej
+stdout.put("Wartosc zmiennej int32 w postaci szesnastkowej: ")
+stdout.puth32(z);	// Wyświetlnie zmiennej 32-bitowej w postaci heksadecymalnej
+end zad3_2_2;

@@ -1,0 +1,31 @@
+program zad8_1; 
+#include ("stdlib.hhf"); 
+static 
+	tab: int32[256];	// Deklaracja tablicy liczb 32-bitowych 
+	i: int32 := 1; 		// Deklaracja zmiennej 32-bitowej
+procedure zero;
+	begin zero;
+		// Zerowanie wartości tablicy o indeksach wartości rejestru EBX do 255
+		for (mov(ebx, ecx); ecx < 256; inc(ecx)) do 
+			mov(0, tab[ecx * 4]);		// Zerowanie wartości w tablicy
+			exitif (ecx == 127) zero;	// Przedwczesny powrót z procedury
+		endfor;
+	end zero;
+begin zad8_1; 
+mov(100, ebx);							// Wczytanie wartości 100 do rejestru EBX
+// Wpisywanie wartości od 1 do 256 do tablicy
+for (mov(0, ecx); ecx < 256; inc(ecx)) do 
+	mov(i, tab[ecx * 4]);
+	inc(i); 
+endfor;
+// Wyświetlenie tablicy
+for (mov(0, ecx); ecx < 256; inc(ecx)) do 
+	stdout.put(tab[ecx * 4], ' ') 
+endfor;
+zero();		// Wywołanie procedury zerowania tablicy
+stdout.newln();
+// Ponowne wyświetlenie tablicy
+for (mov(0, ecx); ecx < 256; inc(ecx)) do 
+	stdout.put(tab[ecx * 4], ' ') 
+endfor;
+end zad8_1; 

@@ -1,0 +1,12 @@
+program zad6_2;
+#include("stdlib.hhf");
+static
+	tab: int8[10] := [10,11,12,13,14,15,16,17,18,19];	// Deklaracja tablicy 10-elementowej
+	i: int32;		// Deklaracja indeksu tablicy
+begin zad6_2;
+stdout.put("Podaj indeks tablicy: ");
+stdin.get(i);		// Wczytanie indeksu tablicy
+mov(i, EAX);		// Przeniesienie indeksu do rejestru EAX
+mov(tab[EAX], AL);	// Przeniesienie elementu tablicy o danym indeksie do rejestru AL
+stdout.puti8(AL);	// Wyświetlenie rejestru AL
+end zad6_2;

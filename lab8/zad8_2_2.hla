@@ -1,0 +1,31 @@
+program zad8_2_2;
+#include("stdlib.hhf");
+// Deklaracja zmiennych globalnych
+static
+	x: int32 := 100;
+	y: int32 := 200;
+procedure pr;
+	// Deklaracja zmiennych lokalnych dla procedury pr
+	var
+		x: int32;
+		y: int32;
+	begin pr;
+		mov(10, x);		// Wczytanie wartości 10 do zmiennej lokalnej x
+		// Wyświetlanie zmiennej lokalnej x od 10 do 0
+		for (mov(0, EAX); EAX < 11; inc(EAX)) do
+			stdout.put(x, " ");
+			dec(x);
+		endfor;
+		stdout.newln();
+		mov(0, y);		// Wczytanie wartości 0 do zmiennej lokalnej y
+		// Wyświetlanie zmiennej lokalnej y od 0 do 10
+		for (mov(0, EAX); EAX < 11; inc(EAX)) do
+			stdout.put(y, " ");
+			inc(y);
+		endfor;
+		stdout.newln();
+	end pr;
+begin zad8_2_2;
+call(pr);	// Wywołanie procedury ze zmiennymi lokalnymi
+stdout.put("Zmienne globalne: ", x, ", ", y, nl);
+end zad8_2_2;

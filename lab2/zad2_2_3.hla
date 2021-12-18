@@ -1,0 +1,18 @@
+program zad2_2_3;
+#include("stdlib.hhf");
+static
+	liczba: int8 := 40;		// Zmienna - licznik od 40 do 1
+	nowalinia: int8 := 0;	// Zmienna - wskaźnik przejścia do nowej linii
+begin zad2_2_3;
+	// Pętla for od 40 do 1. Zmienna sterująca - rejestr AL
+	for (mov(liczba, AL); AL >= 1; dec(AL)) do
+		mov(AL, liczba);
+		// Po 5 przejściach pętli for...
+		if (nowalinia == 5) then
+			stdout.newln();		// ...wyświetl nową linie
+			mov(0, nowalinia);	// oraz wyzeruj wskaźnik
+		endif;
+		stdout.put(liczba:4);
+		add(1, nowalinia);		// Zwiększ wskaźnik nowej linii o 1
+	endfor;
+end zad2_2_3;

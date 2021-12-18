@@ -1,0 +1,30 @@
+program zad9_2;
+#include("stdlib.hhf");
+#include("kalkulator.hhf");	// Zawarcie procedur kalkulatora
+static
+	liczba1 : int32;		// Pierwsza liczba
+	liczba2 : int32;		// Druga liczba
+	operacja : char;		// Operacja kalkulatora
+begin zad9_2;
+// Wczytywanie zmiennych do kalkulatora
+stdout.put("Podaj pierwsza liczbe: ");
+stdin.get(liczba1);
+stdout.put("Podaj druga liczbe: ");
+stdin.get(liczba2);
+stdin.flushInput();
+stdout.put("Podaj znak operacji: ");
+stdin.get(operacja);
+// Wybor procedury w zależności od operacji
+if (operacja == '+') then
+	dodawanie(liczba1, liczba2);
+endif;
+if (operacja == '-') then
+	odejmowanie(liczba1, liczba2);
+endif;
+if (operacja == '*') then
+	mnozenie(liczba1, liczba2);
+endif;
+if (operacja == '/') then
+	dzielenie(liczba1, liczba2);
+endif;
+end zad9_2;

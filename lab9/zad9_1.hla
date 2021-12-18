@@ -1,0 +1,20 @@
+program zad9_1;
+#include("stdlib.hhf");
+static
+	ilosc : int32;	// Deklaracja liczby znaków
+	znak : char;	// Deklaracja zmiennej znakowej
+// Procedura wyświetlania danego znaku w danej ilości
+procedure znaki (ilosc : int32; znak : char);
+	begin znaki;
+		// Pętla przechodząca tyle kroków jaka jest ilość znaków
+		for (mov(0, EAX); EAX < ilosc; inc(EAX)) do
+			stdout.putc(znak);	// Wyświetlenie znaku
+		endfor;	
+	end znaki;
+begin zad9_1;
+stdout.put("Podaj znak: ");
+stdin.get(znak);	// Wczytanie znaku
+stdout.put("Podaj liczbe znakow do wyswietlenia: ");
+stdin.get(ilosc);	// Wczytanie ilości
+znaki(ilosc, znak);	// Wywołanie procedury wyświetlającej
+end zad9_1;

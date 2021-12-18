@@ -1,0 +1,17 @@
+program zad_5_2_1;
+#include("stdlib.hhf");
+static
+	znak: char;		// Deklaracja zmiennej znakowej
+begin zad_5_2_1;
+	stdout.put("Podaj wielka litere: ");
+	stdin.getc();	// Pobranie znaku z klawiatury do rejestru AL
+	mov(al, znak);	// Przeniesienie wartości rejestru AL do zmiennej
+	if (znak < 65 || znak > 90) then
+		// Wyświetl komunikat jeśli wprowadzony znak nie jest wielką literą
+		stdout.put("Nieprawidlowy znak!", nl);
+	else
+		add(32, al);		// Dodanie 32 do wartości znaku (Dla wielkich liter oznacza zmianę na małą literę)
+		stdout.put("Po konwersji na mala litere: ");
+		stdout.putc(al);	// Wyświetlenie wartości rejestru jako znak
+	endif;
+end zad_5_2_1;

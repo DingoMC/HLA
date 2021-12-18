@@ -1,0 +1,12 @@
+program zad_4_3_1;
+#include("stdlib.hhf");
+static
+	liczba: int8;	// Deklaracja zmiennej 8-bitowej
+begin zad_4_3_1;
+stdout.put("Podaj liczbe dodatnia: ");
+stdin.get(liczba);	// Wczytanie wartości zmiennej
+repeat				// Początek instrukcji powtarzanych
+	stdout.put(liczba, " ");
+	sub(1, liczba);	// Odjęcie 1 od wartości zmiennej
+until(liczba==0);	// Warunek końca powtarzania
+end zad_4_3_1;

@@ -1,0 +1,32 @@
+program zad7_2_2;
+#include("stdlib.hhf");
+static
+	// Deklaracja dwuwymiarowej tablicy znaków
+	tab: char[5, 4];
+	// Deklaracja indeksów tablicy dwuwymiarowej
+	i: int32 := 0;
+	j: int32 := 0;
+	znak: int8 := 97;
+begin zad7_2_2;
+repeat							// Pętla po ilości wierszy
+	mov(0, j);					// Wyzerowanie licznika kolumn
+	repeat						// Pętla po ilości kolumn
+		mov(i, ebx);			// przeniesienie indeksu wierszy do rejestru EBX
+		intmul(4, ebx);			// Pomnożenie indeksu wierszy przez liczbę kolumn
+		add(j, ebx);			// Dodanie indeksu kolumny do rejestru EBX
+		// Pominięcie znaku 'q'
+		if (znak == 113)
+		then
+			inc(znak);
+		endif;
+		mov(znak, al);			// Przeniesienie wartości znaku do rejestru AL
+		mov(al, tab[ebx]);		// Przeniesienie rejestru AL do wartości w tablicy jako znak
+		stdout.put(tab[ebx]);	// Wyświetlenie znaku o podanym adresie
+		stdout.put(" ");
+		inc(j);					// Inkrementacja indeksu kolumny
+		inc(znak);				// Inkrementacja wartości znaku
+	until(j >= 4);				// Warunek końcowy pętli indeksów kolumn
+	stdout.put(nl);				// Wyświetlenie nowej linii
+	inc(i);						// Inkrementacja indeksu wiersza
+until(i >= 5);					// Warunek końcowy pętli indeksów wierszy
+end zad7_2_2;

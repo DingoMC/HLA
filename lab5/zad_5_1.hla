@@ -1,0 +1,28 @@
+program zad_5_1;
+#include("stdlib.hhf");
+static
+	// Deklaracja zmiennych rzeczywistych
+	zm1: real32 := -4.87660e-2;
+	zm2: real32 := 562.3456e+1;
+	zm3: real32 := 3.14e-15;
+begin zad_5_1;
+stdout.put("Zmienna 1 dziesietnie: ", nl);
+stdout.putr32(zm1, 10, 6, ' ');	// Wyświetlanie zmiennej rzeczywistej (10 znaków, 6 po przecinku, znak wypełnienia: spacja)
+stdout.put(nl, zm1:10:6, nl);	// To samo wyświetlanie procedurą put
+stdout.put("Zmienna 1 wykladniczo: ", nl);
+stdout.pute32(zm1, 12);		// Wyświetlanie zmiennej wykladniczo (12 znaków)
+stdout.put(nl, zm1, nl);	// Procedura put domyślnie wyświetla liczbę w postaci wykładniczej
+// Powtórzenie procedur dla reszty zmiennych zmieniając parametry wyświetlania
+stdout.put("Zmienna 2 dziesietnie: ", nl);
+stdout.putr32(zm2, 9, 3, ' ');
+stdout.put(nl, zm2:9:3, nl);
+stdout.put("Zmienna 2 wykladniczo: ", nl);
+stdout.pute32(zm2, 14);
+stdout.put(nl, zm2, nl);
+stdout.put("Zmienna 3 dziesietnie: ", nl);
+stdout.putr32(zm3, 20, 17, ' ');
+stdout.put(nl, zm3:20:17, nl);
+stdout.put("Zmienna 3 wykladniczo: ", nl);
+stdout.pute32(zm3, 9);
+stdout.put(nl, zm3);
+end zad_5_1;
